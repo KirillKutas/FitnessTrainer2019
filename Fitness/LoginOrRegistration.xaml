@@ -1,0 +1,81 @@
+﻿<Window x:Name="LoginOrRegistrantion" x:Class="Fitness.LoginOrRegistration"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Fitness"
+        mc:Ignorable="d"
+        Title="Fitness Trainer" Height="450" Width="800" ResizeMode="CanMinimize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="41*"/>
+            <RowDefinition Height="415*"/>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" x:Name="BorderForBack" BorderBrush="Black" BorderThickness="0" HorizontalAlignment="Left" Height="41" VerticalAlignment="Top" Width="794" Background="#FF9C0000"/>
+        <Grid Grid.Row="1" Margin="0,0,0,10">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="0*"/>
+            </Grid.RowDefinitions>
+            <Grid x:Name="Registration" Visibility="Visible">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="1" Grid.Row="0" Content="Регистрация"  HorizontalAlignment="Center" Margin="63,0"  VerticalAlignment="Bottom" Width="141" FontFamily="Segoe UI Semibold" FontSize="22" />
+
+                <TextBox Name="EMail" Grid.Column="1" HorizontalAlignment="Left" Height="27" Margin="63,10,0,1" Grid.Row="1" TextWrapping="Wrap" Text="Введите E-mail" VerticalAlignment="Bottom" Width="141" GotFocus="EMail_GotFocus" LostFocus="EMail_LostFocus"/>
+                <Label Content="E-mail:" Grid.Column="1"  HorizontalAlignment="Center" Margin="52,5,84,0" Grid.Row="1" VerticalAlignment="Top" Width="120" FontFamily="Segoe UI Semibold" FontSize="18"/>
+                <Label  Content="Пароль:" Grid.Column="1" HorizontalAlignment="Center" Margin="52,5,84,0" Grid.Row="2" VerticalAlignment="Top" Width="120" FontFamily="Segoe UI Semibold" FontSize="18"/>
+
+                <TextBox Name="PersonName" Grid.Column="1" HorizontalAlignment="Left" Height="27" Margin="63,0,0,0" Grid.Row="3" TextWrapping="Wrap" Text="Введите nickname" VerticalAlignment="Bottom" Width="141" LostFocus="PersonName_LostFocus" GotFocus="PersonName_GotFocus"/>
+                <Label Content="Nickname:" Grid.Column="1" HorizontalAlignment="Center" Margin="52,5,84,0" Grid.Row="3" VerticalAlignment="Top" Width="120" FontFamily="Segoe UI Semibold" FontSize="18"/>
+
+                <Button Name="ButtonForRegistration" Content="Регистрация" Grid.Column="1" HorizontalAlignment="Left" Margin="63,23,0,0" Grid.Row="4" VerticalAlignment="Top" Width="141" Height="33" RenderTransformOrigin="0.494,-0.176" Click="ButtonForRegistration_Click"/>
+                <Label Name="Error" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="62,0,0,0" Grid.Row="5" VerticalAlignment="Top" Width="352" Foreground="Red" Grid.ColumnSpan="2"/>
+
+                <Button Name="Back" Content="Назад" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="103" Height="33" Click="Back_Click"/>
+                <PasswordBox Name="PasswordBox2" Grid.Column="1" HorizontalAlignment="Left" Margin="63,39,0,0" Grid.Row="2" VerticalAlignment="Top" Width="140" Height="23"/>
+            </Grid>
+            <Grid x:Name="Login"  Visibility="Hidden">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label Grid.Column="1" Grid.Row="0" Content="Вход"  HorizontalAlignment="Center" Margin="97,0,91,0"  VerticalAlignment="Bottom" Width="77" FontFamily="Segoe UI Semibold" FontSize="22" />
+
+                <TextBox Name="Mail" Grid.Column="1" HorizontalAlignment="Left" Height="27" Margin="63,10,0,1" Grid.Row="1" TextWrapping="Wrap" Text="Введите E-Mail" VerticalAlignment="Bottom" Width="141" GotFocus="Mail_GotFocus" LostFocus="Mail_LostFocus" />
+                <Label Content="E-mail:" Grid.Column="1"  HorizontalAlignment="Center" Margin="52,10,84,0" Grid.Row="1" VerticalAlignment="Top" Width="120" FontFamily="Segoe UI Semibold" FontSize="18"/>
+                <Label  Content="Пароль:" Grid.Column="1" HorizontalAlignment="Center" Margin="52,10,84,0" Grid.Row="2" VerticalAlignment="Top" Width="120" FontFamily="Segoe UI Semibold" FontSize="18"/>
+
+                <Label Name="Err" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="63,0,0,0" Grid.Row="4" VerticalAlignment="Top" Width="194" Foreground="Red"/>
+
+                <Button Content="Назад" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="103" Height="33" Click="Back_Click"/>
+                <Button Name="SignIn" Content="Вход" Grid.Column="1" HorizontalAlignment="Left" Margin="63,22,0,0" Grid.Row="3" VerticalAlignment="Top" Width="141" Height="42" Click="SignIn_Click"/>
+                <PasswordBox Name="PasswordBox1" Grid.Column="1" HorizontalAlignment="Left" Margin="63,49,0,0" Grid.Row="2" VerticalAlignment="Top" Height="26" Width="141"/>
+            </Grid>
+            <Button Visibility="Hidden" Name="RegistrationButton" Content="Регистрация" HorizontalAlignment="Left" VerticalAlignment="Top" Width="397" Height="383" FontFamily="Showcard Gothic" FontSize="24" BorderBrush="White" Background="White" Margin="0,0,0,-10" Click="RegistrationButton_Click" Grid.RowSpan="2"/>
+            <Button Visibility="Hidden" Name="LoginButton" Content="Вход" HorizontalAlignment="Left" Margin="402,0,-5,-10" Width="397" FontFamily="Showcard Gothic" FontSize="24" Background="White" BorderBrush="White" OpacityMask="#FFB93131" Grid.RowSpan="2" Click="LoginButton_Click"/>
+
+        </Grid>
+
+
+    </Grid>
+</Window>
