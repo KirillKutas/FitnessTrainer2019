@@ -38,14 +38,14 @@ namespace Fitness
                 try
                 {
                     /////Отправка сообщения
-                    MailAddress from = new MailAddress("fitnesstrainerbstu2019@mail.ru", "FitnessTrainer");// тут с какой почты будет отправлятся сообщение, и типа псевдоним
+                    MailAddress from = new MailAddress(".............", "FitnessTrainer");// тут с какой почты будет отправлятся сообщение, и типа псевдоним
                     MailAddress to = new MailAddress(BufferClass.Mail); // кому будет отправлятся сообщение
                     MailMessage m = new MailMessage(from, to);
                     m.Subject = "Код для смены почты"; // тема сообщения
                     m.Body = "<h2>Код для смены почты " + CodeForChangeMail + "</h2>"; // тута сообщение
                     m.IsBodyHtml = true;
                     SmtpClient smtp = new SmtpClient("smtp.mail.ru", 587); // это смтп сервер и смтп порт для отправки с mail.ru, если с другой почты, то это надо будет поменять
-                    smtp.Credentials = new NetworkCredential("fitnesstrainerbstu2019@mail.ru", "23892389k"); // здесь почта и пароль для отправки с нее
+                    smtp.Credentials = new NetworkCredential(".................", "............"); // здесь почта и пароль для отправки с нее
                     smtp.EnableSsl = true;
                     smtp.Send(m);
                 }

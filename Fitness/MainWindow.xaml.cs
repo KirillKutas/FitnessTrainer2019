@@ -438,14 +438,14 @@ namespace Fitness
                 {
                     try
                     {
-                        MailAddress from = new MailAddress("fitnesstrainerbstu2019@mail.ru", "FitnessTrainer");
+                        MailAddress from = new MailAddress("................", "FitnessTrainer");
                         MailAddress to = new MailAddress(BufferClass.Mail);
                         MailMessage m = new MailMessage(from, to);
                         m.Subject = "Напоминание о тренировках";
                         m.Body = "<h2>" + "Вы слишком много набрали, пора позаниматься." + "</h2>";
                         m.IsBodyHtml = true;
                         SmtpClient smtp = new SmtpClient("smtp.mail.ru", 587);
-                        smtp.Credentials = new NetworkCredential("fitnesstrainerbstu2019@mail.ru", "23892389k");
+                        smtp.Credentials = new NetworkCredential(".........", "............");
                         smtp.EnableSsl = true;
                         smtp.Send(m);
                     }
@@ -496,14 +496,14 @@ namespace Fitness
                 try
                 {
                     /////Отправка сообщения
-                    MailAddress from = new MailAddress("fitnesstrainerbstu2019@mail.ru", "FitnessTrainer");
+                    MailAddress from = new MailAddress("................", "FitnessTrainer");
                     MailAddress to = new MailAddress(BufferClass.Mail);
                     MailMessage m = new MailMessage(from, to);
                     m.Subject = "Статистика аккаунта";
                     m.Body = "<h2>" + StatForAcc.Content + "<br/>" + Kkal.Content + "<br/>" + PressStat.Content + "<br/>" + BicepsStat.Content + "<br/>" + GrydStat.Content + "<br/>" + PlechiStat.Content + "<br/>" + LegsStat.Content + "<br/>" + SpinaStat.Content + "<br/>" + "</h2>";
                     m.IsBodyHtml = true;
                     SmtpClient smtp = new SmtpClient("smtp.mail.ru", 587);
-                    smtp.Credentials = new NetworkCredential("fitnesstrainerbstu2019@mail.ru", "23892389k");
+                    smtp.Credentials = new NetworkCredential("............", ".........");
                     smtp.EnableSsl = true;
                     smtp.Send(m);
                 }
